@@ -24,7 +24,7 @@ const Contact = () => {
         publicKey: "wKstzKCKK3Gm_nASh",
       })
       .then(() => {
-        console.log("Success!")
+        console.log("Success!");
         form.current.reset();
       })
       .catch((e) => console.log(e))

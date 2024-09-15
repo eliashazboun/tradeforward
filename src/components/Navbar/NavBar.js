@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import NavLinks from "../Navbar/NavLinks";
 import { HashLink } from "react-router-hash-link";
-import logo from "../../images/tf-logo.png"
+import logo from "../../images/tf-logo.png";
 
 const NavBar = () => {
   const [top, setTop] = useState(!window.scrollY);
-  const [isOpen, setisOpen] = React.useState(false);
-  function handleClick() {
+  const [isOpen, setisOpen] = useState(false);
+
+  const handleClick = () => {
     setisOpen(!isOpen);
   }
 
@@ -28,8 +29,11 @@ const NavBar = () => {
         <div className="flex flex-row justify-center md:px-12 md:mx-12 items-center text-center font-semibold">
           <HashLink smooth to="/#hero">
             <div className="flex">
-              <img src={logo} alt="Trade forward logo" className="max-w-full h-auto w-56"  />
-            
+              <img
+                src={logo}
+                alt="Trade forward logo"
+                className="max-w-full h-auto w-56"
+              />
             </div>
           </HashLink>
         </div>

@@ -20,9 +20,7 @@ const Checklist = ({ items }) => {
                 ></path>
               </svg>
             </span>
-            <span className="text-gray-600 ">
-              {item}
-            </span>
+            <span className="text-gray-600 ">{item}</span>
           </li>
         ))}
       </ul>

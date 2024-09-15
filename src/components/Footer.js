@@ -1,14 +1,12 @@
 import React from "react";
-import logo from '../images/tf-logo.png'
+import logo from "../images/tf-logo.png";
 
 const Footer = () => {
   return (
     <>
       <footer>
         <div className="footer max-w-full mx-auto px-4 sm:px-6 bg-gray-100 border-t border-b py-30">
-          {/* Top area: Blocks */}
           <div className="grid sm:grid-cols-12 gap-5 py-8 md:py-12 border-t border-gray-200 lg:ml-11">
-            {/* 1st block */}
             <div className="col-span-12 lg:col-span-6">
               <div className="box-border border-b-4 border-blue-900 p-8 bg-gray-200 text-gray-600 text-center rounded-lg xl:w-80 mx-auto">
                 <img src={logo} alt="" />
@@ -19,8 +17,6 @@ const Footer = () => {
               </div>
             </div>
 
-
-            {/* 4th block */}
             <div className="col-span-12 text-center mx-auto lg:col-span-3 font-bold uppercase text-blue-900">
               <div className="text-xl mb-6">Social Media Links.</div>
 

@@ -1,34 +1,27 @@
 import { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import PropTypes from "prop-types";
-import spiritaero from "../../images/spirit.jfif";
-import thirdwave from "../../images/3rdwave.jfif";
-import cardinal from "../../images/cardinal.jpg";
 
 const testimonials = [
   {
-    img: thirdwave,
     quote:
       "The need for experts who understand trade compliance and complexities of system design are essential and fully represented by Trade Forward.",
     name: "N. Blinick",
     role: "3rdwave",
   },
   {
-    img: spiritaero,
     quote:
       "Complex manufacturing operations require unique Trade Compliance solutions. The experts at Trade Forward develop specialized tools for our business challenges.",
     name: "M. Bennett",
     role: " Nordson Corporation",
   },
   {
-    img: spiritaero,
     quote:
       "Global trade system are a challenge to implement and manage. Trade Forward has always delivered the experienced support for system integration testing when needed, as committed.",
     name: "S. Shaw ",
     role: "Aviation Customer",
   },
   {
-    img: cardinal,
     quote:
       "Trade Forward has been instrumental in our team's success. From presentation to training all the way through continued support, they have been with us every step of the way. I am immensely thankful for their partnership and can not imagine a better team to work with day in and day out!",
     name: "S. Dill ",

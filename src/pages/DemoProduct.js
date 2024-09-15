@@ -18,15 +18,18 @@ const DemoProduct = (props) => {
   const [errors, setErrors] = useState([]);
 
   const handleChange = (e) => {
+    errors.products = [];
+
     const value = e.target.value;
     const checked = e.target.checked;
-    errors.products = [];
+
     if (checked) {
       setDemoProducts([...demoProducts, value]);
     } else {
       setDemoProducts(demoProducts.filter((e) => e !== value));
     }
   };
+
   const clearErrors = () => {
     setErrors([]);
   };
@@ -39,17 +42,20 @@ const DemoProduct = (props) => {
     setMessage("");
   };
 
-  function sendEmail(e) {
+  const sendEmail = (e) => {
     e.preventDefault();
+
     document.getElementById("submitBtn").disabled = true;
     document.getElementById("submitBtn").innerHTML = "Loading...";
-    let fData = new FormData();
-    fData.append("first_name", firstName);
-    fData.append("last_name", lastName);
-    fData.append("email", email);
-    fData.append("phone_number", phone);
-    fData.append("message", message);
-    fData.append("products", demoProducts);
+
+    let formData = new FormData();
+
+    formData.append("first_name", firstName);
+    formData.append("last_name", lastName);
+    formData.append("email", email);
+    formData.append("phone_number", phone);
+    formData.append("message", message);
+    formData.append("products", demoProducts);
 
     // emailjs.sendForm('service_7uy4ojg', 'template_et9wvdg', e.target, 'user_uE0bSPGbhRTmAF3I2fd3s')
     //   .then((result) => {
@@ -71,7 +77,7 @@ const DemoProduct = (props) => {
     axios({
       method: "post",
       url: process.env.REACT_APP_DEMO_REQUEST_API,
-      data: fData,
+      data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -80,14 +86,13 @@ const DemoProduct = (props) => {
         document.getElementById("submitBtn").disabled = false;
         document.getElementById("submitBtn").innerHTML = "send message";
         clearInput();
-        //handle success
-        Notiflix.Report.success("Success", response.data.message, "Okay");
+        Notiflix.Report.success("Success", response.data.message, "Okay"); // handle success
       })
       .catch(function (error) {
         document.getElementById("submitBtn").disabled = false;
-        document.getElementById("submitBtn").innerHTML = "send message";
-        //handle error
+        document.getElementById("submitBtn").innerHTML = "send message"; // handle error
         const { response } = error;
+
         if (response.status === 500) {
           Notiflix.Report.failure(
             "An error occurred",
@@ -99,7 +104,7 @@ const DemoProduct = (props) => {
           setErrors(response.data.errors);
         }
       });
-  }
+  };
   return (
     <>
       <div>

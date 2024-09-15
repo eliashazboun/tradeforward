@@ -1,7 +1,6 @@
 import React from "react";
 import FancyTestimonialsSlider from "./Testimonial/Testimonials";
 
-
 const Clients = () => {
   return (
     <div className="my-8 bg-gray-100">
@@ -17,9 +16,7 @@ const Clients = () => {
             Some of our clients.
           </h2>
         </div>
-        <FancyTestimonialsSlider/>
-
-       
+        <FancyTestimonialsSlider />
       </section>
     </div>
   );

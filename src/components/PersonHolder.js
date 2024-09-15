@@ -13,9 +13,7 @@ const Person = ({ img, name, description, mailto }) => {
         <h5 class="mb-2 text-2xl w-fit font-bold tracking-tight text-gray-900 hover-underline-animation">
           {name}
         </h5>
-        <p class="mb-3 font-normal text-gray-700">
-          {description}
-        </p>
+        <p class="mb-3 font-normal text-gray-700">{description}</p>
         <a
           href={`mailto:${mailto}`}
           className="flex items-center space-x-2 text-blue-700 hover:text-blue-900 transition-colors"
